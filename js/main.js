@@ -1,4 +1,61 @@
+// Intro animation handler
 document.addEventListener("DOMContentLoaded", function () {
+  // Create enhanced cherry blossoms
+  const createCherryBlossoms = () => {
+    const container = document.getElementById("cherry-blossoms");
+    const petalCount = 80; // Increased number of petals
+
+    for (let i = 0; i < petalCount; i++) {
+      const petal = document.createElement("div");
+
+      // Randomly select petal type from 4 different types
+      const petalType = Math.floor(Math.random() * 4) + 1;
+      petal.className = `petal petal-${petalType}`;
+
+      // Random position, delay, and duration for each petal
+      const leftPos = Math.random() * 100; // random horizontal position
+      const delay = Math.random() * 8; // random delay
+      const duration = 6 + Math.random() * 10; // random duration between 6-16s
+      const swayDuration = 3 + Math.random() * 5; // random sway duration
+
+      petal.style.left = `${leftPos}%`;
+      petal.style.animationDelay = `${delay}s`;
+      petal.style.animationDuration = `${duration}s, ${swayDuration}s`;
+
+      // Add slight rotation variation
+      const rotation = Math.random() * 360;
+      petal.style.transform = `rotate(${rotation}deg)`;
+
+      container.appendChild(petal);
+    }
+  };
+
+  createCherryBlossoms();
+
+  // Elegant exit animation for intro
+  setTimeout(function () {
+    const introAnimation = document.getElementById("intro-animation");
+    const mainContent = document.querySelector("main");
+
+    // Add a small delay before starting the transition
+    setTimeout(() => {
+      // Add fade-out class to intro animation
+      introAnimation.classList.add("fade-out");
+
+      // Show main content with a slight delay for better transition
+      setTimeout(() => {
+        mainContent.classList.add("visible");
+      }, 300);
+
+      // Remove intro from DOM after animation completes
+      setTimeout(function () {
+        if (introAnimation && introAnimation.parentNode) {
+          introAnimation.parentNode.removeChild(introAnimation);
+        }
+      }, 1500); // Longer time to match the CSS transition duration
+    }, 200);
+  }, 5500); // Extended time to enjoy the enhanced intro
+
   // 스크롤 애니메이션
   const animateOnScroll = () => {
     const sections = document.querySelectorAll(".section");

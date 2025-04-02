@@ -105,6 +105,240 @@ footer {
   margin-top: 2rem;
 }
 
+/* Improved Intro Animation Styles */
+.intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff8fa, #f0faff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  overflow: hidden;
+}
+
+.intro-animation.fade-out {
+  opacity: 0;
+  transform: scale(1.1);
+  pointer-events: none;
+}
+
+/* Enhanced Cherry Blossom Styles */
+.cherry-blossoms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  background-color: #ffcad4;
+  border-radius: 150% 0 150% 0;
+  animation: fall linear infinite, sway ease-in-out infinite;
+  transform-origin: 0% 0%;
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+}
+
+.petal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, #fff 0%, transparent 20%);
+}
+
+.petal-1 {
+  width: 12px;
+  height: 12px;
+  background-color: #ffb6c1;
+}
+
+.petal-2 {
+  width: 15px;
+  height: 15px;
+  background-color: #ffcad4;
+}
+
+.petal-3 {
+  width: 10px;
+  height: 10px;
+  background-color: #ffd1dc;
+}
+
+.petal-4 {
+  width: 18px;
+  height: 18px;
+  background-color: #ffc0cb;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  25% {
+    transform: rotate(25deg) translateX(20px);
+  }
+  50% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  75% {
+    transform: rotate(-25deg) translateX(-20px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0px);
+  }
+}
+
+/* Enhanced Intro Content Styles */
+.intro-content {
+  text-align: center;
+  padding: 2.5rem;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 25px rgba(255, 182, 193, 0.5);
+  animation: contentEntrance 2s forwards;
+  transform: translateY(20px);
+  opacity: 0;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+@keyframes contentEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-hearts {
+  position: relative;
+  height: 120px;
+  margin-bottom: 30px;
+}
+
+.intro-hearts i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff6b8b;
+  filter: drop-shadow(0 0 5px rgba(255, 107, 139, 0.5));
+}
+
+.heart-1 {
+  opacity: 0;
+  font-size: 24px;
+  animation: pulse 2s ease-in-out infinite 0.5s, fadeIn 1s forwards;
+}
+
+.heart-2 {
+  opacity: 0;
+  font-size: 48px;
+  animation: pulse 2s ease-in-out infinite, fadeIn 1s forwards 0.3s;
+}
+
+.heart-3 {
+  opacity: 0;
+  font-size: 72px;
+  animation: pulse 2s ease-in-out infinite 0.2s, fadeIn 1s forwards 0.6s;
+}
+
+.intro-title {
+  font-family: "Playfair Display", "Noto Sans KR", serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards 1s;
+  color: #d64c76;
+  text-shadow: 0 2px 5px rgba(214, 76, 118, 0.2);
+  letter-spacing: 1px;
+}
+
+.intro-date {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards 1.5s;
+  color: #555;
+}
+
+.intro-message {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards 2s;
+  color: #444;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide main content until intro animation completes */
+main {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+main.visible {
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 3rem 0;
