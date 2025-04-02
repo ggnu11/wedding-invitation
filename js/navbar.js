@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const navbarContent = `
             <div class="navbar-logo">
-                <a href="#home">S & J</a>
+                <a href="#home">우리의 결혼식</a>
             </div>
             <div class="navbar-toggle">
                 <span class="bar"></span>
@@ -58,4 +58,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   createNavbar();
   window.addEventListener("scroll", handleScroll);
+
+  const navLinks = document.querySelectorAll('#navbar-container a[href^="#"]');
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
 });
