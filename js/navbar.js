@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <li><a href="#couple">신랑 & 신부</a></li>
                 <li><a href="#gallery">갤러리</a></li>
                 <li><a href="#location">오시는 길</a></li>
-                <li><a href="#rsvp">참석 여부</a></li>
+                <li><a href="#rsvp">축하 전하기</a></li>
             </ul>
         `;
 

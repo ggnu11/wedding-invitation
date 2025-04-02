@@ -214,9 +214,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // Setup account number copy functionality
+  const setupCopyButtons = () => {
+    const copyButtons = document.querySelectorAll(".copy-btn");
+
+    copyButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const accountNumber = this.getAttribute("data-account");
+
+        // Create temporary textarea to copy from
+        const textarea = document.createElement("textarea");
+        textarea.value = accountNumber;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+
+        // Select and copy text
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        // Visual feedback
+        this.classList.add("copied");
+        this.textContent = "복사됨!";
+
+        // Reset button after 2 seconds
+        setTimeout(() => {
+          this.classList.remove("copied");
+          this.textContent = "복사하기";
+        }, 2000);
+      });
+    });
+  };
+
+  // Setup KakaoPay buttons
+  const setupKakaoPayButtons = () => {
+    const kakaoPayButtons = document.querySelectorAll(".kakao-pay-btn");
+
+    kakaoPayButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const person = this.getAttribute("data-person");
+
+        // In a real implementation, this would integrate with KakaoPay SDK
+        // For now, we'll just demonstrate with an alert
+        alert(
+          `${
+            person === "groom" ? "신랑" : "신부"
+          }측에 카카오페이로 마음을 전합니다.`
+        );
+
+        // Normally, you would use KakaoPay SDK to open the payment dialog
+        // window.open('https://mockup.kakao.pay.url/' + person, '_blank');
+      });
+    });
+  };
+
+  // Initialize gift section functionality
+  const initGiftSection = () => {
+    setupCopyButtons();
+    setupKakaoPayButtons();
+  };
+
   // 페이지 로드 및 스크롤 시 애니메이션 적용
   window.addEventListener("scroll", animateOnScroll);
   animateOnScroll(); // 초기 로드 시 실행
 
   setupGallery();
+  initGiftSection(); // Add this line to initialize gift section functionality
 });

@@ -430,6 +430,167 @@ main.visible {
   opacity: 1;
 }
 
+/* Gift Section Styles */
+.gift-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.accounts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  margin-bottom: 3rem;
+}
+
+.account-box {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.account-box h3 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--highlight-color);
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.account-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.account-row p {
+  margin: 0.3rem 0;
+  flex: 1;
+}
+
+.account-row p:nth-child(2) {
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: var(--highlight-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 0.9rem;
+}
+
+.copy-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.copy-btn.copied {
+  background-color: #4caf50;
+}
+
+/* KakaoPay Section Styles */
+.kakao-pay-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.kakao-pay-section h3 {
+  margin-bottom: 1.5rem;
+  color: #3c3c3c;
+}
+
+.kakao-pay-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.kakao-pay-groom,
+.kakao-pay-bride {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #fee500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.kakao-pay-groom h4,
+.kakao-pay-bride h4 {
+  color: #3c1e1e;
+  margin-bottom: 1rem;
+}
+
+.kakao-pay-qr {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.kakao-pay-qr img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.kakao-pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #3c1e1e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.3s;
+  width: 100%;
+}
+
+.kakao-pay-btn img {
+  height: 20px;
+  width: auto;
+}
+
+.kakao-pay-btn:hover {
+  transform: translateY(-3px);
+}
+
+.gift-message {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-style: italic;
+  color: #666;
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 3rem 0;
@@ -437,5 +598,18 @@ main.visible {
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .accounts-container {
+    flex-direction: column;
+  }
+
+  .account-box {
+    max-width: 100%;
+  }
+
+  .kakao-pay-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
