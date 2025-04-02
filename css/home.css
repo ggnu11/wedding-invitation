@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: url("../img/hero-background.jpg") no-repeat center center;
+  background: url("../assets/images/marry.jpg") no-repeat center center;
   background-size: cover;
   color: var(--light-text);
   text-align: center;
