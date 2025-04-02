@@ -69,9 +69,21 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetSection = document.querySelector(targetId);
 
       if (targetSection) {
-        targetSection.scrollIntoView({
+        // Get navbar height to use as offset
+        const navbar = document.querySelector(".navbar");
+        const navbarHeight = navbar.offsetHeight;
+
+        // Get the target's position relative to the viewport
+        const targetPosition = targetSection.getBoundingClientRect().top;
+
+        // Calculate the scroll position with navbar offset
+        const offsetPosition =
+          targetPosition + window.pageYOffset - navbarHeight;
+
+        // Smooth scroll to the adjusted position
+        window.scrollTo({
+          top: offsetPosition,
           behavior: "smooth",
-          block: "start",
         });
 
         history.pushState(null, null, targetId);
