@@ -214,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Setup account number copy functionality
   const setupCopyButtons = () => {
     const copyButtons = document.querySelectorAll(".copy-btn");
 
@@ -222,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", function () {
         const accountNumber = this.getAttribute("data-account");
 
-        // Create temporary textarea to copy from
         const textarea = document.createElement("textarea");
         textarea.value = accountNumber;
         textarea.setAttribute("readonly", "");
@@ -256,16 +254,11 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", function () {
         const person = this.getAttribute("data-person");
 
-        // In a real implementation, this would integrate with KakaoPay SDK
-        // For now, we'll just demonstrate with an alert
         alert(
           `${
             person === "groom" ? "신랑" : "신부"
           }측에 카카오페이로 마음을 전합니다.`
         );
-
-        // Normally, you would use KakaoPay SDK to open the payment dialog
-        // window.open('https://mockup.kakao.pay.url/' + person, '_blank');
       });
     });
   };
@@ -281,5 +274,5 @@ document.addEventListener("DOMContentLoaded", function () {
   animateOnScroll(); // 초기 로드 시 실행
 
   setupGallery();
-  initGiftSection(); // Add this line to initialize gift section functionality
+  initGiftSection();
 });

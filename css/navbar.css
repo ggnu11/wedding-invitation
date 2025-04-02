@@ -27,6 +27,7 @@
 
 .navbar-menu {
   display: flex;
+  gap: 15px;
   list-style: none;
 }
 

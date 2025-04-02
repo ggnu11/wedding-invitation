@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Calculate the scroll position with navbar offset
         const offsetPosition =
-          targetPosition + window.pageYOffset - navbarHeight;
+          targetPosition + window.pageYOffset - navbarHeight + 20;
 
         // Smooth scroll to the adjusted position
         window.scrollTo({
