@@ -1,0 +1,47 @@
+#gallery {
+  background-color: var(--secondary-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  padding-bottom: 100%; /* 정사각형 비율 유지 */
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  background-image: url("../img/placeholder.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover .image-placeholder {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+}

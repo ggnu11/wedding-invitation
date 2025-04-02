@@ -1,0 +1,66 @@
+#rsvp {
+  background-color: var(--secondary-color);
+}
+
+.rsvp-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-group input {
+  margin-right: 5px;
+  width: auto;
+}
+
+.radio-group label {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+@media (max-width: 768px) {
+  .rsvp-form {
+    padding: 1.5rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우리의 결혼식에 초대합니다</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/location.css" />
+    <link rel="stylesheet" href="css/rsvp.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <main>
+      <section id="home" class="section">
+        <div class="overlay"></div>
+        <div class="container">
+          <h1 class="title">신랑 & 신부</h1>
+          <p class="date">2024년 00월 00일 토요일 오후 2시</p>
+          <p class="location">아름다운 웨딩홀</p>
+          <div class="heart-divider">
+            <i class="fas fa-heart"></i>
+          </div>
+          <p class="intro-text">
+            서로 다른 길을 걸어온 두 사람이<br />
+            하나의 길을 함께 걸어가려 합니다<br />
+            귀한 발걸음으로 축복해 주시면<br />
+            더없는 기쁨으로 간직하겠습니다
+          </p>
+        </div>
+      </section>
+
+      <section id="couple" class="section">
+        <div class="container">
+          <h2 class="section-title">신랑 & 신부</h2>
+          <div class="couple-container">
+            <div class="person groom">
+              <div class="person-image"></div>
+              <h3>김 신랑</h3>
+              <p>김아무개 · 이아무개의 아들</p>
+            </div>
+            <div class="heart-between">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="person bride">
+              <div class="person-image"></div>
+              <h3>이 신부</h3>
+              <p>이아무개 · 박아무개의 딸</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section">
+        <div class="container">
+          <h2 class="section-title">갤러리</h2>
+          <div class="gallery-grid">
+            <!-- 이미지는 실제 이미지로 교체 필요 -->
+            <div class="gallery-item">
+              <div class="image-placeholder"></div>
+            </div>
+            <div class="gallery-item">
+              <div class="image-placeholder"></div>
+            </div>
+            <div class="gallery-item">
+              <div class="image-placeholder"></div>
+            </div>
+            <div class="gallery-item">
+              <div class="image-placeholder"></div>
+            </div>
+            <div class="gallery-item">
+              <div class="image-placeholder"></div>
+            </div>
+            <div class="gallery-item">
+              <div class="image-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="location" class="section">
+        <div class="container">
+          <h2 class="section-title">오시는 길</h2>
+          <div class="map-container">
+            <div id="map" class="map-placeholder">
+              <!-- 실제 지도 API를 사용해 교체 필요 -->
+              지도가 표시될 영역
+            </div>
+            <div class="location-info">
+              <h3>아름다운 웨딩홀</h3>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 서울시 강남구 청첩로 123
+              </p>
+              <p><i class="fas fa-phone"></i> 02-123-4567</p>
+              <h4>교통안내</h4>
+              <p><b>지하철</b>: 2호선 강남역 3번 출구에서 도보 5분</p>
+              <p><b>버스</b>: 3412, 4412 버스 청첩장 정류장 하차</p>
+              <p><b>주차</b>: 웨딩홀 내 주차 가능</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rsvp" class="section">
+        <div class="container">
+          <h2 class="section-title">참석 여부</h2>
+          <form class="rsvp-form">
+            <div class="form-group">
+              <label for="name">이름</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">연락처</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label>참석 여부</label>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="attending"
+                  name="attendance"
+                  value="attending"
+                />
+                <label for="attending">참석합니다</label>
+                <input
+                  type="radio"
+                  id="not-attending"
+                  name="attendance"
+                  value="not-attending"
+                />
+                <label for="not-attending">참석하지 못합니다</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="guests">참석 인원</label>
+              <input type="number" id="guests" name="guests" min="0" max="10" />
+            </div>
+            <div class="form-group">
+              <label for="message">메시지</label>
+              <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">제출하기</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 신랑 & 신부. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

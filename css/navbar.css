@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: var(--background-color);
+  box-shadow: var(--shadow);
+  padding: 0.8rem 2rem;
+}
+
+.navbar-logo a {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-menu li {
+  margin-left: 2.5rem;
+}
+
+.navbar-menu a {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.navbar-menu a:hover {
+  color: var(--accent-color);
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 3px 0;
+  transition: all 0.3s;
+}
+
+.navbar-toggle.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background-color: var(--background-color);
+    text-align: center;
+    transition: all 0.5s;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+  }
+
+  .navbar-menu.active {
+    top: 60px;
+  }
+
+  .navbar-menu li {
+    margin: 1rem 0;
+  }
+}
