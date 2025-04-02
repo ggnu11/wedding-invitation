@@ -1,41 +1,153 @@
 // Intro animation handler
 document.addEventListener("DOMContentLoaded", function () {
-  // Create enhanced cherry blossoms
-  const createCherryBlossoms = () => {
-    const container = document.getElementById("cherry-blossoms");
-    const petalCount = 80; // Increased number of petals
+  // Initialize particles.js with elegant twinkling effect
+  if (typeof particlesJS !== "undefined") {
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 50,
+          density: {
+            enable: true,
+            value_area: 1500,
+          },
+        },
+        color: {
+          value: ["#d4af37", "#e6e6e6", "#ffffff"],
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000",
+          },
+        },
+        opacity: {
+          value: 0.2,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 0.5,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: false,
+        },
+        move: {
+          enable: true,
+          speed: 0.3,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "bubble",
+          },
+          resize: true,
+        },
+        modes: {
+          bubble: {
+            distance: 200,
+            size: 4,
+            duration: 2,
+            opacity: 0.5,
+            speed: 3,
+          },
+        },
+      },
+      retina_detect: true,
+    });
+  }
 
-    for (let i = 0; i < petalCount; i++) {
-      const petal = document.createElement("div");
+  // Create more elegant wedding elements
+  const createWeddingElements = () => {
+    const container = document.getElementById("wedding-elements");
+    if (!container) return;
 
-      // Randomly select petal type from 4 different types
-      const petalType = Math.floor(Math.random() * 4) + 1;
-      petal.className = `petal petal-${petalType}`;
+    // Create elegant decoration elements
+    const confettiCount = 35;
+    const confettiColors = ["gold", "silver", "accent"];
+    const confettiShapes = ["circle", "square", "rect", "diamond"];
 
-      // Random position, delay, and duration for each petal
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement("div");
+
+      // Random confetti styles
+      const colorIndex = Math.floor(Math.random() * confettiColors.length);
+      const shapeIndex = Math.floor(Math.random() * confettiShapes.length);
+      confetti.className = `confetti confetti-${confettiColors[colorIndex]} ${confettiShapes[shapeIndex]}`;
+
+      // Random position, delay, and duration
       const leftPos = Math.random() * 100; // random horizontal position
-      const delay = Math.random() * 8; // random delay
-      const duration = 6 + Math.random() * 10; // random duration between 6-16s
-      const swayDuration = 3 + Math.random() * 5; // random sway duration
+      const delay = Math.random() * 15; // random delay
+      const duration = 10 + Math.random() * 15; // random duration between 10-25s
 
-      petal.style.left = `${leftPos}%`;
-      petal.style.animationDelay = `${delay}s`;
-      petal.style.animationDuration = `${duration}s, ${swayDuration}s`;
+      confetti.style.left = `${leftPos}%`;
+      confetti.style.animationDelay = `${delay}s`;
+      confetti.style.animationDuration = `${duration}s`;
 
-      // Add slight rotation variation
-      const rotation = Math.random() * 360;
-      petal.style.transform = `rotate(${rotation}deg)`;
+      container.appendChild(confetti);
+    }
 
-      container.appendChild(petal);
+    // Create subtle floating hearts
+    const heartCount = 18;
+
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement("i");
+      heart.className = "fas fa-heart floating-heart";
+
+      // Random heart size - more elegant, less prominent
+      const size = 8 + Math.random() * 15; // between 8px and 23px
+      heart.style.fontSize = `${size}px`;
+
+      // Random opacity - more subtle
+      const opacity = 0.4 + Math.random() * 0.4; // between 0.4 and 0.8
+      heart.style.opacity = opacity;
+
+      // Random position, delay, and duration
+      const leftPos = Math.random() * 100;
+      const delay = Math.random() * 10;
+      const duration = 12 + Math.random() * 18;
+
+      heart.style.left = `${leftPos}%`;
+      heart.style.animationDelay = `${delay}s`;
+      heart.style.animationDuration = `${duration}s, 2.5s`;
+
+      container.appendChild(heart);
     }
   };
 
-  createCherryBlossoms();
+  createWeddingElements();
 
-  // Elegant exit animation for intro
+  // Elegant exit animation
   setTimeout(function () {
     const introAnimation = document.getElementById("intro-animation");
     const mainContent = document.querySelector("main");
+
+    if (!introAnimation || !mainContent) return;
 
     // Add a small delay before starting the transition
     setTimeout(() => {
@@ -45,16 +157,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // Show main content with a slight delay for better transition
       setTimeout(() => {
         mainContent.classList.add("visible");
-      }, 300);
+      }, 800);
 
       // Remove intro from DOM after animation completes
       setTimeout(function () {
         if (introAnimation && introAnimation.parentNode) {
           introAnimation.parentNode.removeChild(introAnimation);
         }
-      }, 1500); // Longer time to match the CSS transition duration
-    }, 200);
-  }, 5500); // Extended time to enjoy the enhanced intro
+      }, 2000); // Match to the CSS transition duration
+    }, 300);
+  }, 6500); // Set timing for intro display
 
   // 스크롤 애니메이션
   const animateOnScroll = () => {
