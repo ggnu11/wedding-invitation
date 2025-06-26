@@ -48,4 +48,8 @@
   .map-placeholder {
     height: 300px;
   }
+  .map-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
