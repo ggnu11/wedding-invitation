@@ -46,10 +46,19 @@
 
 @media (max-width: 768px) {
   .map-placeholder {
-    height: 300px;
+    height: 250px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
   .map-container {
     flex-direction: column;
     gap: 20px;
+  }
+  .root_daum_roughmap {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    box-sizing: border-box;
   }
 }
